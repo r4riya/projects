@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> validations</title>
+        <script>
+            function myvalidations(){
+                let x=document.forms["myform"]["fname"].value;
+                let y=document.forms["myform"]["lname"].value;
+                let a=document.forms["myform"]["date"].value;
+                let b=document.forms["myform"]["bdate"].value;
+                
+                  let d2 = new Date("2002-03-12");
+                  let d1=new Date(a);
+                  let d3=new Date("2042-03-12");
+                  let d4=new Date(b);
+                  console.log(a);
+             console.log(d3);
+             console.log(d4);
+            
+                
+            
+                let firstName=x.trim();
+                let lastName=y.trim();
+                
+                console.log(/[^A-Za-z\d]/.test(firstName,),firstName)
+
+               
+                if(firstName==""){
+                    alert("firstname must be filled out")
+                    return false;
+                   
+                } 
+                else if(/[*|\":<>[\]{}`\\()';@&$]/.test(lastName)){
+              
+                    
+                        alert("special characters are not allowed")
+                        return false;
+                    }
+                    else if(/^[0-9]+$/.test(firstName)){
+                        alert("numbers are not allowed") 
+                        return false;         
+                     }
+                     if (!/^[a-zA-Z]*$/g.test(firstName)) {
+        alert("Invalid characters") 
+        return false;
+                     }
+                    console.log(/[^A-Za-z\d]/.test(lastName,),lastName)
+                    
+               
+               if(lastName==""){
+                 alert("lastname must be filled out")
+                 return false;
+   
+                 }
+                  else if(/[*|\":<>[\]{}`\\()';@&$]/.test(lastName)){
+              
+                   alert("special characters are not allowed")
+                   return false;
+                      }
+                      else if(/^[0-9]+$/.test(lastName)){
+                            alert("number not allowed")
+                            return false;
+                         
+                       }
+            
+            if (!/^[a-zA-Z]*$/g.test(lastName)) {
+        alert("Invalid characters")
+        return false;
+                     }
+                
+                     console.log(d2.getTime(),d1.getTime());
+                    
+                    
+                     if (d2.getTime()<=d1.getTime()){
+                        alert("invalid date")
+                        return false;
+                
+                    } 
+
+                    if(d4.getTime()<=d2.getTime()&& d4.getTime()>=d3.getTime()){
+                        alert("wrong age")
+                        return false;
+                    }
+                    
+                    return true;
+                    }
+            
+                
+        </script>
+    </head>
+    <body>
+        <form name="myform" method="POST" onsubmit= "return  myvalidations()"  action=" https://www.w3schools.com/js/js_date_formats.asp ">
+            <div>
+                <label for="fname"> First Name:</label><br>
+                <input type="text" id="fname" name="fname" >
+                
+            </div>
+            <div>
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname" name="lname" >
+
+            </div>
+            <div>
+                <label for="date picker"> date of joining: </label><br>
+                <input type="date" id="date" name="date" required><br>
+            </div>
+            <div>
+                <label for="contact number"> contact number:</label><br>
+                <input type="number" id="number" name="number" pattern="[0-9]{10}" required><br>
+            </div>
+            <div>
+                <label for="date of birth">Date Of Birth:</label><br>
+                <input type="date" id="bdate" name="bdate"><br><br>
+            </div>
+            <div>
+                <label for="colors"> choose a color:</label>
+                <select id="colors">
+                    <option value="white">white</option>
+                    <option value="red">red</option>
+                    <option value="black">black</option>
+                    <option value="yellow">yellow</option>
+                </select><br><br>
+            </div>
+            <idiv>
+                <input type="submit" value="submit">
+            </idiv>
+        </form>
+    </body>
+</html>

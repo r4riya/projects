@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> date</title>
+        <script>
+            function myvalidation(){
+                let dateString=document.forms["myform"]["date"].value; 
+                      var dtDOB = new Date(dateString);
+                           var dtCurrent = new Date();
+                           console.log(dtCurrent.getUTCFullYear());
+                           if (dtCurrent.getFullYear() - dtDOB.getFullYear() < 18) {
+                               alert(" eligibility 18 years old only")
+                                   return false;
+                          }
+
+             if (dtCurrent.getFullYear() - dtDOB.getFullYear()>=18) {
+                    return true;
+            
+             
+            }
+            if (dtCurrent.getFullYear() - dtDOB.getFullYear()<=58) {
+                    return true;
+            
+             
+            }else{
+                alert("age is more")
+                return false;
+            }
+        }
+        </script>
+
+    </head>
+    <body>
+        <form name="myform" method="GET"  onsubmit=" event.preventDefault(), myvalidation() " action=" https://www.w3schools.com/nodejs/" >
+            <div>
+                <label for="date of birth">Date Of Birth:</label>
+                <input type="date" id="date" name="date"><br><br>
+            </div>
+            <div>
+                <input type="submit" value="submit">
+            </div>
+        </form>
+    </body>
+</html>

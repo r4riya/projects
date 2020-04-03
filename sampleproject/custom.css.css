@@ -1,0 +1,19 @@
+.header{
+     border-color: crimson; 
+        border-style:groove;
+        margin-left:300px ;
+        margin-right:300px;
+         margin-bottom: 200px;
+         }
+.footer{
+            margin-left: 100px;
+            margin-bottom: 100px;
+            margin-top: 200px;
+            margin-bottom: 100px;
+        
+        }
+ .down{
+            color:brown;
+            text-align: center;
+        }
+

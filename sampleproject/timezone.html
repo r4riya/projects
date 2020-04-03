@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Time Zone</title>
+        <script>
+                 function myvalidation(){
+                let dateString=document.forms["myform"]["date"].value;
+                let usaTime = new Date().toLocaleString("en-US", {timeZone: "America/New_York"});
+                  usaTime = new Date(usaTime);
+                  let usa=('USA time:newyork '+usaTime.toLocaleString())
+                   let europeTime=new Date().toLocaleString("en-US",{timeZone:"Europe/London"})
+                         europeTime=new Date(europeTime);
+                         let europe=('europe time:london'+europeTime.toLocaleString());
+                   let australiaTime=new Date().toLocaleString("en-US",{timeZone:"Australia/Sydney"})
+                         australiaTime=new Date(australiaTime);
+                         let australia=('australia time:sydney'+europeTime.toLocaleString());
+                   let japanTime=new Date().toLocaleString("en-US",{timeZone:"Asia/Tokyo"})
+                         japanTime=new Date(japanTime);
+                         let japan=('japan time:tokyo'+europeTime.toLocaleString());
+                 let moroccoTime=new Date().toLocaleString("en-US",{timeZone:"Africa/Casablanca"})
+                         moroccoTime=new Date(moroccoTime);
+                         let morocco=('morocco time:casablanca'+europeTime.toLocaleString());
+                         alert(usa + japan + morocco+australia+europe)
+                         
+                
+        
+                 }
+        </script>EN-
+    </head>
+    <body>
+        <form name="myform" method="GET" onsubmit="event.preventDefault(),myvalidation()" action="https://www.w3schools.com/js/js_json_datatypes.asp ">
+            <div>
+        <label for="time zone">Pick Date And Time:</label><br>
+        <input type="datetime-local" id ="date" name="date"><br><br>
+        </div>
+        <div>
+            <input type="submit" value="submit">
+        </div>
+        </form>
+    </body>
+</html>
